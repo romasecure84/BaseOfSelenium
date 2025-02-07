@@ -1,10 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from LoginWithSelenium import login
+# from LoginWithSelenium import login
 
 
 def scrape_page(the_driver):
-    quotes = driver.find_elements(By.CLASS_NAME, 'quote')
+    quotes = the_driver.find_elements(By.CLASS_NAME, 'quote')
     for element in quotes:
 
         quote = element.find_element(By.CLASS_NAME, 'text')
@@ -34,6 +34,6 @@ options.add_experimental_option('detach', True)
 driver = webdriver.Chrome(options = options)
 driver.get(url)
 
-login(driver)
+# login(driver)
 
 scrape_page(driver)
